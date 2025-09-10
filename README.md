@@ -57,7 +57,75 @@ Registeration Number :212224220011
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-## 
+## MainActivity.Java
+
+```
+package com.example.lifecycle;
+
+import android.os.Bundle;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import com.example.lifecycle.R;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        Toast toast= Toast.makeText(getApplicationContext(),"OnCreated Executed",Toast.LENGTH_LONG);
+        toast.show();
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+
+    protected void onStart(){
+        super.onStart();
+        Toast toast= Toast.makeText(getApplicationContext(),"OnStart Executed",Toast.LENGTH_LONG);
+        toast.show();
+    }
+
+    protected void onResume(){
+        super.onResume();
+        Toast toast= Toast.makeText(getApplicationContext(),"OnResume Executed",Toast.LENGTH_LONG);
+        toast.show();
+    }
+
+    protected void onPause(){
+        super.onPause();
+        Toast toast= Toast.makeText(getApplicationContext(),"onPause Executed",Toast.LENGTH_LONG);
+        toast.show();
+    }
+
+    protected void onStop(){
+        super.onStop();
+        Toast toast= Toast.makeText(getApplicationContext(),"onStop Executed",Toast.LENGTH_LONG);
+        toast.show();
+    }
+
+    protected void onRestart(){
+        super.onRestart();
+        Toast toast= Toast.makeText(getApplicationContext(),"onRestart Executed",Toast.LENGTH_LONG);
+        toast.show();
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+        Toast toast= Toast.makeText(getApplicationContext(),"onDestroy Executed",Toast.LENGTH_LONG);
+        toast.show();
+    }
+}
+```
 ## OUTPUT
 
 <img width="1920" height="1200" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/3d3e1c38-f35d-4ce0-b200-e390845c7fb5" />
