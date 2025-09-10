@@ -128,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
 ```
 ## OUTPUT
 
-<img width="1920" height="1200" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/3d3e1c38-f35d-4ce0-b200-e390845c7fb5" />
-
 <img width="1920" height="1200" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/af4a2bdd-2585-4c8c-9a50-1eaedacc98e7" />
 
 <img width="1920" height="1200" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/61d6648f-38b6-4407-91ac-aafef32c6455" />
